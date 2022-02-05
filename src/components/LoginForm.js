@@ -49,7 +49,7 @@ const LoginForm = () => {
           title: "Success!",
           text: "Now you can select the dishes for the menu!",
           icon: "success",
-          confirmButtonText: "Go back",
+          confirmButtonText: "Go to home",
         });
       } catch (exception) {
         Swal.fire({
