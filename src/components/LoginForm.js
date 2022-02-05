@@ -7,12 +7,15 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 
 import Swal from "sweetalert2";
+import LoadingButton from "./LoadingButton";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
+  const [isLoading, setLoading] = useState(false);
 
+  // Check if user is logged in by checking if there is local storage token
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem("loggedUser");
     if (loggedUserJSON) {
@@ -21,34 +24,46 @@ const LoginForm = () => {
     }
   }, []);
 
+  // Form submit handler
   const handleLogin = async (event) => {
     event.preventDefault();
     console.log("login info", email, password);
 
-    if (email === "" || password === "") {
+    // Check if any field is empty
+    if (email !== "" && password !== "") {
+      setLoading(true);
+      try {
+        const user = await loginService.login({
+          email,
+          password,
+        });
+        setLoading(false);
+
+        window.localStorage.setItem("loggedUser", JSON.stringify(user));
+
+        setUser(user);
+        setEmail("");
+        setPassword("");
+
+        Swal.fire({
+          title: "Success!",
+          text: "Now you can select the dishes for the menu!",
+          icon: "success",
+          confirmButtonText: "Go back",
+        });
+      } catch (exception) {
+        Swal.fire({
+          title: "Opps!",
+          text: "The email or password entered is incorrect",
+          icon: "error",
+          confirmButtonText: "Go back",
+        });
+        setLoading(false);
+      }
+    } else {
       Swal.fire({
-        title: "Opps!",
+        title: "Fields empty!",
         text: "Please enter email and password",
-        icon: "error",
-        confirmButtonText: "Go back",
-      });
-    }
-
-    try {
-      const user = await loginService.login({
-        email,
-        password,
-      });
-
-      window.localStorage.setItem("loggedUser", JSON.stringify(user));
-
-      setUser(user);
-      setEmail("");
-      setPassword("");
-    } catch (exception) {
-      Swal.fire({
-        title: "Opps!",
-        text: "The email or password entered is incorrect",
         icon: "error",
         confirmButtonText: "Go back",
       });
@@ -76,9 +91,14 @@ const LoginForm = () => {
             onChange={({ target }) => setPassword(target.value)}
           />
         </Form.Group>
-        <Button variant="primary" type="submit" className="mb-3">
-          Login
-        </Button>
+
+        {isLoading ? (
+          <LoadingButton />
+        ) : (
+          <Button variant="primary" type="submit" className="mb-3">
+            Login
+          </Button>
+        )}
       </Form>
     </Container>
   );
