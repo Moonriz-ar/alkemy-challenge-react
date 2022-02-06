@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import loginService from "../services/login";
+import loginService from "../../services/login";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -9,10 +9,9 @@ import Container from "react-bootstrap/Container";
 import Swal from "sweetalert2";
 import LoadingButton from "./LoadingButton";
 
-const LoginForm = () => {
+const LoginForm = ({ user, setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
   const [isLoading, setLoading] = useState(false);
 
   // Check if user is logged in by checking if there is local storage token
