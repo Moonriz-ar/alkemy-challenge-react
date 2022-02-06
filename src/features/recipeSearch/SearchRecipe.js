@@ -1,4 +1,3 @@
-import fetchRecipesbySearchQuery from "../../services/spoonacular";
 import { useReducer } from "react";
 
 import SearchBar from "./SearchBar";
@@ -16,6 +15,12 @@ const SearchRecipe = () => {
     });
   }
 
+  function fetchRecipesPending() {
+    dispatchRecipeSearch({
+      type: "RECIPE/FETCH_PENDING",
+    });
+  }
+
   function fetchRecipesSuccess(recipes) {
     dispatchRecipeSearch({
       type: "RECIPE/FETCH_SUCCESS",
@@ -23,10 +28,21 @@ const SearchRecipe = () => {
     });
   }
 
+  function fetchRecipesFailure(error) {
+    dispatchRecipeSearch({
+      type: "RECIPE/FETCH_FAILURE",
+      payload: error,
+    });
+  }
+
   return (
     <>
       <h1>Search bar</h1>
-      <SearchBar />
+      <SearchBar
+        fetchRecipesPending={fetchRecipesPending}
+        fetchRecipesSuccess={fetchRecipesSuccess}
+        fetchRecipesFailure={fetchRecipesFailure}
+      />
       <h2>Recipes search results</h2>
     </>
   );
@@ -34,13 +50,31 @@ const SearchRecipe = () => {
 
 const initialState = {
   loading: false,
-  searchTerm: "",
+  error: "",
   veganFilter: false,
   recipes: [],
 };
 
 function recipeReducer(state, action) {
   switch (action.type) {
+    case "RECIPE/FETCH_PENDING":
+      return {
+        ...state,
+        loading: true,
+      };
+    case "RECIPE/FETCH_SUCCESS":
+      return {
+        ...state,
+        loading: false,
+        recipes: action.payload,
+      };
+    case "RECIPE/FETCH_FAILURE":
+      return {
+        ...state,
+        loading: false,
+        error: "there was an error",
+        recipes: null,
+      };
     default:
       return state;
   }

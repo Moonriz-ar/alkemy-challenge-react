@@ -1,17 +1,30 @@
 import { useFormik } from "formik";
+import { fetchRecipesBySearchQuery } from "../../services/spoonacular";
 
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 
-const SearchBar = () => {
+const SearchBar = ({
+  isVegan,
+  fetchRecipesPending,
+  fetchRecipesSuccess,
+  fetchRecipesFailure,
+}) => {
   const formik = useFormik({
     initialValues: {
       search: "",
     },
-    onSubmit: (values) => {
-      console.log("form data", values);
+    onSubmit: async (values) => {
+      fetchRecipesPending();
+
+      try {
+        const recipes = await fetchRecipesBySearchQuery(values.search, isVegan);
+        fetchRecipesSuccess(recipes);
+      } catch (err) {
+        fetchRecipesFailure(err);
+      }
     },
     validate: (values) => {
       const errors = {};
