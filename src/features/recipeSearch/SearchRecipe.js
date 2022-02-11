@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 
+import RecipeGrid from "../../components/RecipeGrid";
 import SearchBar from "./SearchBar";
 
 const SearchRecipe = () => {
@@ -31,13 +32,14 @@ const SearchRecipe = () => {
 
   return (
     <>
-      <h1>Search bar</h1>
+      <h2>Search bar</h2>
       <SearchBar
         fetchRecipesPending={fetchRecipesPending}
         fetchRecipesSuccess={fetchRecipesSuccess}
         fetchRecipesFailure={fetchRecipesFailure}
       />
       <h2>Recipes search results</h2>
+      <RecipeGrid recipes={recipesState.recipes} />
     </>
   );
 };
