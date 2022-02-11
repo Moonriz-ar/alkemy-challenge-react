@@ -9,12 +9,6 @@ const SearchRecipe = () => {
   );
 
   //   ACTIONS
-  function toggleVeganFilter() {
-    dispatchRecipeSearch({
-      type: "RECIPE/TOGGLE_VEGAN_FILTER",
-    });
-  }
-
   function fetchRecipesPending() {
     dispatchRecipeSearch({
       type: "RECIPE/FETCH_PENDING",
@@ -51,7 +45,6 @@ const SearchRecipe = () => {
 const initialState = {
   loading: false,
   error: "",
-  veganFilter: false,
   recipes: [],
 };
 
