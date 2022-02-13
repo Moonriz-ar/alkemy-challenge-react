@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 import LoginForm from "./features/loginform/LoginForm";
-import SearchRecipe from "./features/recipeSearch/SearchRecipe";
+import Home from "./Home";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -10,9 +10,8 @@ function App() {
   return (
     <div>
       <h1>Restaurant Menu</h1>
-
       {/* LOGIN FORM */}
-      {user ? <SearchRecipe /> : <LoginForm user={user} setUser={setUser} />}
+      {user ? <Home /> : <LoginForm user={user} setUser={setUser} />}
     </div>
   );
 }

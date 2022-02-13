@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { RecipeDispatchContext } from "./searchRecipeContext";
+
 import { useFormik } from "formik";
 import { fetchRecipesBySearchQuery } from "../../services/spoonacular";
 import { fetchRecipesDetails } from "../../services/spoonacular";
@@ -7,12 +10,30 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 
-const SearchBar = ({
-  isVegan,
-  fetchRecipesPending,
-  fetchRecipesSuccess,
-  fetchRecipesFailure,
-}) => {
+const SearchBar = () => {
+  const dispatch = useContext(RecipeDispatchContext);
+
+  // ACTIONS
+  function fetchRecipesPending() {
+    dispatch({
+      type: "RECIPE/FETCH_PENDING",
+    });
+  }
+
+  function fetchRecipesSuccess(recipes) {
+    dispatch({
+      type: "RECIPE/FETCH_SUCCESS",
+      payload: recipes,
+    });
+  }
+
+  function fetchRecipesFailure(error) {
+    dispatch({
+      type: "RECIPE/FETCH_FAILURE",
+      payload: error,
+    });
+  }
+
   const formik = useFormik({
     initialValues: {
       search: "",
