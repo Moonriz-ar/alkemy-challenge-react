@@ -1,18 +1,62 @@
+import Swal from "sweetalert2";
+
 import { useContext } from "react";
 import { MenuDispatchContext } from "../features/menu/menuContext";
+import { MenuContext } from "../features/menu/menuContext";
 
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 const RecipeCard = ({ recipe, add, remove }) => {
+  const menu = useContext(MenuContext);
   const dispatch = useContext(MenuDispatchContext);
+
+  const veganCount = menu.reduce((sum, recipe) => {
+    if (recipe.vegan) {
+      return sum + 1;
+    } else {
+      return sum;
+    }
+  }, 0);
+
+  console.log("Vegan count", veganCount);
 
   // ACTIONS
   function addRecipeMenu(recipe) {
-    dispatch({
-      type: "MENU/ADD",
-      payload: recipe,
-    });
+    if (menu.length > 4) {
+      Swal.fire({
+        title: "Hold up!",
+        text: "The menu should have a maximum of 4 recipes",
+        icon: "error",
+        confirmButtonText: "Go back",
+      });
+    } else if (menu.length >= 2) {
+      if (recipe.vegan && veganCount >= 2) {
+        Swal.fire({
+          title: "Hold up!",
+          text: "The menu should have a maximum of 2 vegan recipes",
+          icon: "error",
+          confirmButtonText: "Go back",
+        });
+      } else if (recipe.vegan === false && veganCount <= 2) {
+        Swal.fire({
+          title: "Hold up!",
+          text: "The menu should have at least 2 vegan recipes",
+          icon: "error",
+          confirmButtonText: "Go back",
+        });
+      } else {
+        dispatch({
+          type: "MENU/ADD",
+          payload: recipe,
+        });
+      }
+    } else {
+      dispatch({
+        type: "MENU/ADD",
+        payload: recipe,
+      });
+    }
   }
 
   function removeRecipeMenu(recipe) {

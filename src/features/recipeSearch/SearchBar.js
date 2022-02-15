@@ -42,8 +42,7 @@ const SearchBar = () => {
       fetchRecipesPending();
       try {
         const recipes = await fetchRecipesBySearchQuery(values.search);
-        const recipesWithDetails = await fetchRecipesDetails(recipes);
-        fetchRecipesSuccess(recipesWithDetails);
+        fetchRecipesSuccess(recipes);
       } catch (err) {
         fetchRecipesFailure(err);
       }
