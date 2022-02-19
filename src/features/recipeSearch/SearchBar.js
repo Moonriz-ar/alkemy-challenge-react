@@ -3,7 +3,6 @@ import { RecipeDispatchContext } from "./searchRecipeContext";
 
 import { useFormik } from "formik";
 import { fetchRecipesBySearchQuery } from "../../services/spoonacular";
-import { fetchRecipesDetails } from "../../services/spoonacular";
 
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
