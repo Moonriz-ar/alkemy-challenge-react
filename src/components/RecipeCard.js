@@ -38,7 +38,7 @@ const RecipeCard = ({ recipe, add, remove }) => {
       <h2>{recipe.title}</h2>
       <p>Price: ${recipe.pricePerServing}</p>
       <p>Preparation time: {recipe.readyInMinutes}</p>
-      <p>Health Score: {recipe.readyInMinutes}</p>
+      <p>Health Score: {recipe.healthScore}</p>
       {add && (
         <Button
           onClick={() =>
