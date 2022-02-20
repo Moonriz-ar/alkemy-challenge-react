@@ -44,7 +44,7 @@ const RecipeCard = ({ recipe, add, remove }) => {
 
       {add && (
         <Button
-          variant="dark"
+          variant="dark rounded-bottom"
           onClick={() =>
             addRecipeMenu(
               recipe,
@@ -61,7 +61,7 @@ const RecipeCard = ({ recipe, add, remove }) => {
       )}
       {remove && (
         <Button
-          variant="dark"
+          variant="dark rounded-bottom"
           onClick={() => removeRecipeMenu(recipe, dispatch)}
         >
           {remove}

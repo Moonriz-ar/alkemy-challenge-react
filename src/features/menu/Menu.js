@@ -3,6 +3,8 @@ import { MenuContext } from "./menuContext";
 
 import RecipeGrid from "../../components/RecipeGrid";
 
+import Container from "react-bootstrap/Container";
+
 const Menu = () => {
   const menu = useContext(MenuContext);
 
@@ -25,11 +27,27 @@ const Menu = () => {
 
   return (
     <>
-      <h2>Menu</h2>
-      <p>Total price: ${totalPrice}</p>
-      <p>Average preparation time: {calculateAverage(menu, "time")} minutes</p>
-      <p>Average health score: {calculateAverage(menu, "health score")}</p>
-      {menu ? <RecipeGrid recipes={menu} remove="Remove" /> : null}
+      {menu.length !== 0 ? (
+        <Container className="mb-4">
+          <p className="my-1">
+            <span className="fw-bold">Total price:</span> ${totalPrice}
+          </p>
+          <p className="my-1">
+            <span className="fw-bold">Average preparation time:</span>{" "}
+            {calculateAverage(menu, "time")} minutes
+          </p>
+          <p className="my-1">
+            <span className="fw-bold">Average health score:</span>{" "}
+            {calculateAverage(menu, "health score")}
+          </p>
+        </Container>
+      ) : (
+        <p>Go back and add some recipes to the menu!</p>
+      )}
+
+      {menu ? (
+        <RecipeGrid recipes={menu} remove="Remove" isSearchResult={false} />
+      ) : null}
     </>
   );
 };

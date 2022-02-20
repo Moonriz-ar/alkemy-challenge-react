@@ -3,10 +3,10 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import RecipeCard from "./RecipeCard";
 
-const RecipeGrid = ({ recipes, add, remove }) => {
+const RecipeGrid = ({ recipes, isSearchResult, add, remove }) => {
   return (
     <Container>
-      <Row xs={1} md={4} className="g-4">
+      <Row xs={1} md={isSearchResult ? 4 : 1} className="g-4">
         {recipes
           ? recipes.map((recipe) => {
               return (

@@ -1,13 +1,21 @@
+import { useState } from "react";
+
 import { RecipesProvider } from "./features/recipeSearch/searchRecipeContext";
 import { MenuProvider } from "./features/menu/menuContext";
+
 import Menu from "./features/menu/Menu";
 import SearchBar from "./features/recipeSearch/SearchBar";
 import SearchResults from "./features/recipeSearch/SearchResults";
 import MenuButton from "./features/menu/MenuButton";
-
 import Navbar from "react-bootstrap/Navbar";
+import Offcanvas from "react-bootstrap/Offcanvas";
 
 const Home = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <>
       <MenuProvider>
@@ -29,10 +37,17 @@ const Home = () => {
             <SearchBar />
           </Navbar>
 
-          <div className="content-wrapper">
+          <div className="position-relative pb-5">
             <SearchResults />
-            <MenuButton className="menu-button" />
-            <Menu />
+            <MenuButton handleShow={handleShow} />
+            <Offcanvas show={show} onHide={handleClose}>
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title>Menu</Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Menu />
+              </Offcanvas.Body>
+            </Offcanvas>
           </div>
         </RecipesProvider>
       </MenuProvider>

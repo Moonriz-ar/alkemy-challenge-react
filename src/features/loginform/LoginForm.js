@@ -73,47 +73,46 @@ const LoginForm = ({ user, setUser }) => {
   };
 
   return (
-    <Container fluid className="">
-      <Row>
-        <Col xs={12}>
-          <Image
-            src="/img/restaurant-four-seasons.jpg"
-            fluid="true"
-            className=""
-          />
-        </Col>
-        <Col xs={12}>
-          <Form onSubmit={handleLogin}>
-            <Form.Group className="mb-3">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={({ target }) => setEmail(target.value)}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="password"
-                value={password}
-                onChange={({ target }) => setPassword(target.value)}
-              />
-            </Form.Group>
+    <section className="bg-dark vh-100">
+      <Container fluid="md" className="pt-4 pb-0">
+        <Row>
+          <Col xs={1} md={3}></Col>
+          <Col xs={10} md={6}>
+            <h1 className="text-white mb-4">FOUR SEASONS MENU</h1>
+            <Image src="/img/four-seasons.jpg" fluid="true" className="mb-4" />
+            <Form onSubmit={handleLogin}>
+              <Form.Group className="py-1 mb-2">
+                <Form.Label className="text-white">Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={({ target }) => setEmail(target.value)}
+                />
+              </Form.Group>
+              <Form.Group className="py-1 mb-3">
+                <Form.Label className="text-white">Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="password"
+                  value={password}
+                  onChange={({ target }) => setPassword(target.value)}
+                />
+              </Form.Group>
 
-            {isLoading ? (
-              <LoadingButton />
-            ) : (
-              <Button variant="primary" type="submit" className="mb-3">
-                Login
-              </Button>
-            )}
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+              {isLoading ? (
+                <LoadingButton />
+              ) : (
+                <Button variant="outline-light" type="submit" className="mb-3">
+                  Login
+                </Button>
+              )}
+            </Form>
+          </Col>
+          <Col xs={1} md={3}></Col>
+        </Row>
+      </Container>
+    </section>
   );
 };
 

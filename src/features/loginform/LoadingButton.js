@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 
 const LoadingButton = () => {
   return (
-    <Button variant="primary" className="mb-3" disabled>
+    <Button variant="outline-light" className="mb-3" disabled>
       <Spinner
         as="span"
         animation="border"
