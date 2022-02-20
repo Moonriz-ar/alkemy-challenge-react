@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<h3 align="center">Alkemy React Challenge ✨</h3>
 
-## Available Scripts
+  <p align="center">
+    This is a front end React challenge from Alkemy, where a SPA webapp hotel menu was developed using Spoonacular API. Technologies used: JWT local storage for authentication, React useContext and useReducer for state management, Sweet Alert for pop up alerts, Formik for form validation.
+    <br />
+    <br />   
+  </p>
+  
+### Links
 
-In the project directory, you can run:
+* [See Demo](https://alkemy-challenge-react-six.vercel.app/)
+* [Learning references and features checklist](https://alert-milk-258.notion.site/Alkemy-Challenge-REACT-3190b24469864643863dce3dc5a2a47a)
 
-### `npm start`
+<br />
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- ABOUT THE PROJECT -->
+## About the project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Desktop
 
-### `npm test`
+![Desktop overview](https://media.giphy.com/media/UgUyQH2XiYMu1N6kkG/giphy.gif)
+![Desktop blog](https://media.giphy.com/media/i72gvzHIYzPjX2Dvie/giphy.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Mobile
 
-### `npm run build`
+![Mobile overview](https://media.giphy.com/media/MH7lg7DbXOjRy1PY89/giphy.gif)
+![Mobile blog](https://media.giphy.com/media/OD4OfopiGGAa1OL9tS/giphy.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ 
+### Built with
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* [React](https://reactjs.org/)
+* [React-Bootstrap](https://react-bootstrap.github.io/)
+* [Sweet Alert](https://sweetalert2.github.io/)
+* [Formik](https://formik.org/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### API
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* [Spoonacular API](https://spoonacular.com/food-api)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- CONTACT -->
+## Contact
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Andrea Lin - [LinkedIn](https://www.linkedin.com/in/andrealinar/)
