@@ -8,11 +8,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   return (
-    <div>
-      <h1>Restaurant Menu</h1>
-      {/* LOGIN FORM */}
-      {user ? <Home /> : <LoginForm user={user} setUser={setUser} />}
-    </div>
+    <div>{user ? <Home /> : <LoginForm user={user} setUser={setUser} />}</div>
   );
 }
 

@@ -57,31 +57,29 @@ const SearchBar = () => {
   });
 
   return (
-    <Container>
-      <Form
-        className="d-flex justify-content-center align-items-start"
-        onSubmit={formik.handleSubmit}
-      >
-        <div className="me-3">
-          <FormControl
-            type="search"
-            placeholder="Search recipe"
-            name="search"
-            className="me-2"
-            aria-label="Search"
-            value={formik.values.search}
-            onChange={formik.handleChange}
-          />
-          {formik.errors.search && (
-            <div className="text-danger ms-1 mt-1">{formik.errors.search}</div>
-          )}
-        </div>
+    <Form
+      className="d-flex justify-content-center align-items-start p-2"
+      onSubmit={formik.handleSubmit}
+    >
+      <div className="me-3">
+        <FormControl
+          type="search"
+          placeholder="Search recipe"
+          name="search"
+          className="me-2"
+          aria-label="Search"
+          value={formik.values.search}
+          onChange={formik.handleChange}
+        />
+        {formik.errors.search && (
+          <div className="text-danger ms-1 mt-1">{formik.errors.search}</div>
+        )}
+      </div>
 
-        <Button variant="outline-primary" type="submit">
-          Search
-        </Button>
-      </Form>
-    </Container>
+      <Button variant="outline-light" type="submit">
+        Search
+      </Button>
+    </Form>
   );
 };
 

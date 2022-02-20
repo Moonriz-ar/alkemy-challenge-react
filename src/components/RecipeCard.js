@@ -35,12 +35,16 @@ const RecipeCard = ({ recipe, add, remove }) => {
   return (
     <Card>
       <Card.Img variant="top" src={recipe.image} />
-      <h2>{recipe.title}</h2>
-      <p>Price: ${recipe.pricePerServing}</p>
-      <p>Preparation time: {recipe.readyInMinutes}</p>
-      <p>Health Score: {recipe.healthScore}</p>
+      <section className="p-3">
+        <h3>{recipe.title}</h3>
+        <p className="my-1">Price: ${recipe.pricePerServing}</p>
+        <p className="my-1">Preparation time: {recipe.readyInMinutes}</p>
+        <p className="my-1">Health Score: {recipe.healthScore}</p>
+      </section>
+
       {add && (
         <Button
+          variant="dark"
           onClick={() =>
             addRecipeMenu(
               recipe,
@@ -56,7 +60,10 @@ const RecipeCard = ({ recipe, add, remove }) => {
         </Button>
       )}
       {remove && (
-        <Button onClick={() => removeRecipeMenu(recipe, dispatch)}>
+        <Button
+          variant="dark"
+          onClick={() => removeRecipeMenu(recipe, dispatch)}
+        >
           {remove}
         </Button>
       )}

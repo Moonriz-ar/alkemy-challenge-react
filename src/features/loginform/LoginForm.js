@@ -5,6 +5,9 @@ import loginService from "../../services/login";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 import Swal from "sweetalert2";
 import LoadingButton from "./LoadingButton";
@@ -70,35 +73,46 @@ const LoginForm = ({ user, setUser }) => {
   };
 
   return (
-    <Container>
-      <Form onSubmit={handleLogin}>
-        <Form.Group className="mb-3">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={({ target }) => setEmail(target.value)}
+    <Container fluid className="">
+      <Row>
+        <Col xs={12}>
+          <Image
+            src="/img/restaurant-four-seasons.jpg"
+            fluid="true"
+            className=""
           />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="password"
-            value={password}
-            onChange={({ target }) => setPassword(target.value)}
-          />
-        </Form.Group>
+        </Col>
+        <Col xs={12}>
+          <Form onSubmit={handleLogin}>
+            <Form.Group className="mb-3">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={({ target }) => setEmail(target.value)}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="password"
+                value={password}
+                onChange={({ target }) => setPassword(target.value)}
+              />
+            </Form.Group>
 
-        {isLoading ? (
-          <LoadingButton />
-        ) : (
-          <Button variant="primary" type="submit" className="mb-3">
-            Login
-          </Button>
-        )}
-      </Form>
+            {isLoading ? (
+              <LoadingButton />
+            ) : (
+              <Button variant="primary" type="submit" className="mb-3">
+                Login
+              </Button>
+            )}
+          </Form>
+        </Col>
+      </Row>
     </Container>
   );
 };
