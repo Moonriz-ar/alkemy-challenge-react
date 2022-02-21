@@ -21,13 +21,15 @@
 
 ### Desktop
 
-![Desktop overview](https://media.giphy.com/media/UgUyQH2XiYMu1N6kkG/giphy.gif)
-![Desktop blog](https://media.giphy.com/media/i72gvzHIYzPjX2Dvie/giphy.gif)
+![Desktop login](https://media.giphy.com/media/ezO0I424q7hbEn03N4/giphy.gif)
+![Desktop search](https://media.giphy.com/media/i72gvzHIYzPjX2Dvie/giphy.gif)
+![Desktop menu](https://media.giphy.com/media/i72gvzHIYzPjX2Dvie/giphy.gif)
 
 ### Mobile
 
-![Mobile overview](https://media.giphy.com/media/MH7lg7DbXOjRy1PY89/giphy.gif)
-![Mobile blog](https://media.giphy.com/media/OD4OfopiGGAa1OL9tS/giphy.gif)
+![Mobile login](https://media.giphy.com/media/ezO0I424q7hbEn03N4/giphy.gif)
+![Mobile search](https://media.giphy.com/media/i72gvzHIYzPjX2Dvie/giphy.gif)
+![Mobile menu](https://media.giphy.com/media/i72gvzHIYzPjX2Dvie/giphy.gif)
 
  
 ### Built with
