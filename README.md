@@ -31,11 +31,17 @@
 
 ![Desktop menu](https://media.giphy.com/media/GPWYsmftlcugJEBkpI/giphy.gif)
 
-### Mobile
+### Mobile Login
 
-![Mobile login](https://media.giphy.com/media/ezO0I424q7hbEn03N4/giphy.gif)
-![Mobile search](https://media.giphy.com/media/i72gvzHIYzPjX2Dvie/giphy.gif)
-![Mobile menu](https://media.giphy.com/media/i72gvzHIYzPjX2Dvie/giphy.gif)
+![Mobile login](https://media.giphy.com/media/oxS0IsEUT8Sd42MoJx/giphy.gif)
+
+### Mobile Search
+
+![Mobile search](https://media.giphy.com/media/RBIoudVidTUPcs4kjT/giphy.gif)
+
+### Mobile Menu
+
+![Mobile menu](https://media.giphy.com/media/X9Du5EPAl7zHZT00lE/giphy.gif)
 
  
 ### Built with
