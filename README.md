@@ -19,11 +19,17 @@
 <!-- ABOUT THE PROJECT -->
 ## About the project
 
-### Desktop
+### Desktop Login
 
 ![Desktop login](https://media.giphy.com/media/ezO0I424q7hbEn03N4/giphy.gif)
-![Desktop search](https://media.giphy.com/media/i72gvzHIYzPjX2Dvie/giphy.gif)
-![Desktop menu](https://media.giphy.com/media/i72gvzHIYzPjX2Dvie/giphy.gif)
+
+### Desktop Search
+
+![Desktop search](https://media.giphy.com/media/9MmvjQujKy5czsFIqw/giphy.gif)
+
+### Desktop Menu
+
+![Desktop menu](https://media.giphy.com/media/GPWYsmftlcugJEBkpI/giphy.gif)
 
 ### Mobile
 
