@@ -8,6 +8,11 @@
     <br />
     Technologies used in this project: JWT local storage for authentication, Create React App, React useContext and useReducer for state management, Sweet Alert for pop up alerts, Formik for form validation.
     <br />
+    Please login with following credentials:
+    <br />
+    Username: challenge@alkemy.org
+    <br />
+    Password: react
     <br />   
   </p>
   
