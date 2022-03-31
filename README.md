@@ -3,10 +3,11 @@
 <!-- PROJECT LOGO -->
 <h3 align="center">Alkemy React Challenge ✨</h3>
 
-  <p align="center">
+  <p>
     This is a front end React challenge from Alkemy, developed a web application hotel menu using Spoonacular API. 
     <br />
     Technologies used in this project: JWT local storage for authentication, Create React App, React useContext and useReducer for state management, Sweet Alert for pop up alerts, Formik for form validation.
+    <br />
     <br />
     Please login with following credentials:
     <br />
