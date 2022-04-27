@@ -19,6 +19,7 @@
   
 ### Links
 
+* [Demo](https://andrealinrecipe.vercel.app/)
 * [Learning references and features checklist](https://alert-milk-258.notion.site/Alkemy-Challenge-REACT-3190b24469864643863dce3dc5a2a47a)
 
 <br />
